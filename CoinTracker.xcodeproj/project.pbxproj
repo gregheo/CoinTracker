@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7823EA9E1A91CD4300BAF2C9 /* CoinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7823EA9D1A91CD4300BAF2C9 /* CoinDetailViewController.swift */; };
+		7823EAA81A91D1B900BAF2C9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7823EAA71A91D1B900BAF2C9 /* InterfaceController.swift */; };
+		7823EAAA1A91D1B900BAF2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7823EAA91A91D1B900BAF2C9 /* Images.xcassets */; };
+		7823EAAE1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 7823EAAD1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app */; };
+		7823EAB61A91D1B900BAF2C9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7823EAB41A91D1B900BAF2C9 /* Interface.storyboard */; };
+		7823EAB81A91D1B900BAF2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7823EAB71A91D1B900BAF2C9 /* Images.xcassets */; };
+		7823EABB1A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7823EAA31A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		782822331A91195C00041AF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782822321A91195C00041AF9 /* AppDelegate.swift */; };
 		782822351A91195C00041AF9 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782822341A91195C00041AF9 /* CoinsViewController.swift */; };
 		782822381A91195C00041AF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782822361A91195C00041AF9 /* Main.storyboard */; };
@@ -23,6 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7823EAAF1A91D1B900BAF2C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782822251A91195C00041AF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7823EAAC1A91D1B900BAF2C9;
+			remoteInfo = "CoinTracker WatchKit App";
+		};
+		7823EAB91A91D1B900BAF2C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782822251A91195C00041AF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7823EAA21A91D1B900BAF2C9;
+			remoteInfo = "CoinTracker WatchKit Extension";
+		};
 		782822431A91195C00041AF9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 782822251A91195C00041AF9 /* Project object */;
@@ -54,6 +74,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7823EAC21A91D1BA00BAF2C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7823EABB1A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		782822731A911A2F00041AF9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +100,14 @@
 
 /* Begin PBXFileReference section */
 		7823EA9D1A91CD4300BAF2C9 /* CoinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
+		7823EAA31A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CoinTracker WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7823EAA61A91D1B900BAF2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7823EAA71A91D1B900BAF2C9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		7823EAA91A91D1B900BAF2C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7823EAAD1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinTracker WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7823EAB31A91D1B900BAF2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7823EAB51A91D1B900BAF2C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7823EAB71A91D1B900BAF2C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7828222D1A91195C00041AF9 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782822311A91195C00041AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		782822321A91195C00041AF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +128,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7823EAA01A91D1B900BAF2C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7828222A1A91195C00041AF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +168,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7823EAA41A91D1B900BAF2C9 /* CoinTracker WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7823EAA71A91D1B900BAF2C9 /* InterfaceController.swift */,
+				7823EAA91A91D1B900BAF2C9 /* Images.xcassets */,
+				7823EAA51A91D1B900BAF2C9 /* Supporting Files */,
+			);
+			path = "CoinTracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7823EAA51A91D1B900BAF2C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7823EAA61A91D1B900BAF2C9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7823EAB11A91D1B900BAF2C9 /* CoinTracker WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7823EAB41A91D1B900BAF2C9 /* Interface.storyboard */,
+				7823EAB71A91D1B900BAF2C9 /* Images.xcassets */,
+				7823EAB21A91D1B900BAF2C9 /* Supporting Files */,
+			);
+			path = "CoinTracker WatchKit App";
+			sourceTree = "<group>";
+		};
+		7823EAB21A91D1B900BAF2C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7823EAB31A91D1B900BAF2C9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		782822241A91195C00041AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +211,8 @@
 				782822451A91195C00041AF9 /* CoinTrackerTests */,
 				782822581A911A2F00041AF9 /* CoinKit */,
 				782822671A911A2F00041AF9 /* CoinKitTests */,
+				7823EAA41A91D1B900BAF2C9 /* CoinTracker WatchKit Extension */,
+				7823EAB11A91D1B900BAF2C9 /* CoinTracker WatchKit App */,
 				7828222E1A91195C00041AF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +224,8 @@
 				782822421A91195C00041AF9 /* CoinTrackerTests.xctest */,
 				782822571A911A2F00041AF9 /* CoinKit.framework */,
 				782822611A911A2F00041AF9 /* CoinKitTests.xctest */,
+				7823EAA31A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex */,
+				7823EAAD1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +318,39 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7823EAA21A91D1B900BAF2C9 /* CoinTracker WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7823EABF1A91D1BA00BAF2C9 /* Build configuration list for PBXNativeTarget "CoinTracker WatchKit Extension" */;
+			buildPhases = (
+				7823EA9F1A91D1B900BAF2C9 /* Sources */,
+				7823EAA01A91D1B900BAF2C9 /* Frameworks */,
+				7823EAA11A91D1B900BAF2C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7823EAB01A91D1B900BAF2C9 /* PBXTargetDependency */,
+			);
+			name = "CoinTracker WatchKit Extension";
+			productName = "CoinTracker WatchKit Extension";
+			productReference = 7823EAA31A91D1B900BAF2C9 /* CoinTracker WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		7823EAAC1A91D1B900BAF2C9 /* CoinTracker WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7823EABC1A91D1BA00BAF2C9 /* Build configuration list for PBXNativeTarget "CoinTracker WatchKit App" */;
+			buildPhases = (
+				7823EAAB1A91D1B900BAF2C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoinTracker WatchKit App";
+			productName = "CoinTracker WatchKit App";
+			productReference = 7823EAAD1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		7828222C1A91195C00041AF9 /* CoinTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7828224C1A91195C00041AF9 /* Build configuration list for PBXNativeTarget "CoinTracker" */;
@@ -240,11 +359,13 @@
 				7828222A1A91195C00041AF9 /* Frameworks */,
 				7828222B1A91195C00041AF9 /* Resources */,
 				782822731A911A2F00041AF9 /* Embed Frameworks */,
+				7823EAC21A91D1BA00BAF2C9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				7828226D1A911A2F00041AF9 /* PBXTargetDependency */,
+				7823EABA1A91D1B900BAF2C9 /* PBXTargetDependency */,
 			);
 			name = CoinTracker;
 			productName = CoinTracker;
@@ -315,6 +436,12 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
+					7823EAA21A91D1B900BAF2C9 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					7823EAAC1A91D1B900BAF2C9 = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					7828222C1A91195C00041AF9 = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -348,11 +475,31 @@
 				782822411A91195C00041AF9 /* CoinTrackerTests */,
 				782822561A911A2F00041AF9 /* CoinKit */,
 				782822601A911A2F00041AF9 /* CoinKitTests */,
+				7823EAA21A91D1B900BAF2C9 /* CoinTracker WatchKit Extension */,
+				7823EAAC1A91D1B900BAF2C9 /* CoinTracker WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7823EAA11A91D1B900BAF2C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7823EAAE1A91D1B900BAF2C9 /* CoinTracker WatchKit App.app in Resources */,
+				7823EAAA1A91D1B900BAF2C9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7823EAAB1A91D1B900BAF2C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7823EAB61A91D1B900BAF2C9 /* Interface.storyboard in Resources */,
+				7823EAB81A91D1B900BAF2C9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7828222B1A91195C00041AF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +534,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7823EA9F1A91D1B900BAF2C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7823EAA81A91D1B900BAF2C9 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		782822291A91195C00041AF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +579,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7823EAB01A91D1B900BAF2C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7823EAAC1A91D1B900BAF2C9 /* CoinTracker WatchKit App */;
+			targetProxy = 7823EAAF1A91D1B900BAF2C9 /* PBXContainerItemProxy */;
+		};
+		7823EABA1A91D1B900BAF2C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7823EAA21A91D1B900BAF2C9 /* CoinTracker WatchKit Extension */;
+			targetProxy = 7823EAB91A91D1B900BAF2C9 /* PBXContainerItemProxy */;
+		};
 		782822441A91195C00041AF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7828222C1A91195C00041AF9 /* CoinTracker */;
@@ -447,6 +612,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7823EAB41A91D1B900BAF2C9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7823EAB51A91D1B900BAF2C9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		782822361A91195C00041AF9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -466,6 +639,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7823EABD1A91D1BA00BAF2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = CoinTracker_WatchKit_Extension;
+				INFOPLIST_FILE = "CoinTracker WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		7823EABE1A91D1BA00BAF2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = CoinTracker_WatchKit_Extension;
+				INFOPLIST_FILE = "CoinTracker WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		7823EAC01A91D1BA00BAF2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CoinTracker WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7823EAC11A91D1BA00BAF2C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "CoinTracker WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		7828224A1A91195C00041AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -547,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoinTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -557,6 +785,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoinTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -677,6 +906,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7823EABC1A91D1BA00BAF2C9 /* Build configuration list for PBXNativeTarget "CoinTracker WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7823EABD1A91D1BA00BAF2C9 /* Debug */,
+				7823EABE1A91D1BA00BAF2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7823EABF1A91D1BA00BAF2C9 /* Build configuration list for PBXNativeTarget "CoinTracker WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7823EAC01A91D1BA00BAF2C9 /* Debug */,
+				7823EAC11A91D1BA00BAF2C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		782822281A91195C00041AF9 /* Build configuration list for PBXProject "CoinTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
