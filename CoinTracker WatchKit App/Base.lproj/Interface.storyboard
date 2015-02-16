@@ -5,10 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Coins Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CoinTracker_WatchKit_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="CoinsInterfaceController" customModule="CoinTracker_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Tg5-Za-8GJ">
+                            <items>
+                                <tableRow identifier="CoinRow" id="eiE-1M-BOJ" customClass="CoinRow" customModule="CoinTracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5R1-NO-I4i">
+                                        <items>
+                                            <label alignment="left" text="Coin name" id="vaW-vW-iaP">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Price" id="eZG-GL-fmI"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="vaW-vW-iaP" id="x7J-lI-4ad"/>
+                                        <outlet property="priceLabel" destination="eZG-GL-fmI" id="9EH-j1-XRv"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="coinTable" destination="Tg5-Za-8GJ" id="0Te-96-MtI"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>
