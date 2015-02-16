@@ -35,10 +35,23 @@ class CoinsInterfaceController: WKInterfaceController {
 
     coins = coinHelper.cachedPrices()
     reloadTable()
+
+    WKInterfaceController.openParentApplication(["request": "refreshData"], reply: { (replyInfo, error) -> Void in
+      if let coinData = replyInfo["coinData"] as? NSData {
+        if let coins = NSKeyedUnarchiver.unarchiveObjectWithData(coinData) as? [Coin] {
+          self.coinHelper.cachePriceData(coins)
+
+          self.coins = coins
+          self.reloadTable()
+        }
+      }
+    })
   }
 
   func reloadTable() {
-    coinTable.setNumberOfRows(coins.count, withRowType: "CoinRow")
+    if coinTable.numberOfRows != coins.count {
+      coinTable.setNumberOfRows(coins.count, withRowType: "CoinRow")
+    }
 
     for (index, coin) in enumerate(coins) {
       if let row = coinTable.rowControllerAtIndex(index) as? CoinRow {

@@ -21,6 +21,7 @@
 */
 
 import UIKit
+import CoinKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     return true
+  }
+
+  func application(application: UIApplication!, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) {
+
+    if let request = userInfo["request"] as? String {
+      if request == "refreshData" {
+        let coinHelper = CoinHelper()
+        let coins = coinHelper.requestPriceSynchronous()
+
+        reply(["coinData": NSKeyedArchiver.archivedDataWithRootObject(coins)])
+        return
+      }
+    }
+
+    reply([:])
   }
 
   func applicationWillResignActive(application: UIApplication) {
