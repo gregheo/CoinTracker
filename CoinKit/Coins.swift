@@ -99,7 +99,7 @@ public class CoinHelper {
     session = NSURLSession(configuration: configuration);
   }
 
-  public func requestPrice(completion: PriceRequestCompletionBlock) {
+  private func coinRequest() -> NSURLRequest {
     let request = NSMutableURLRequest(URL: NSURL(string: URL)!)
     request.HTTPMethod = "POST"
     request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -109,40 +109,47 @@ public class CoinHelper {
     }
     request.HTTPBody = httpBody.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 
-    let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-      if error == nil {
-        var JSONError: NSError?
-        let responseArray: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: &JSONError) as NSArray
-        if JSONError == nil {
-          var coinData = [Coin]()
+    return request
+  }
 
-          for coinDict in responseArray {
-            if let coinDict = coinDict as? NSDictionary {
-              if let key = coinDict["id"] as? String {
-                if (key as NSString).hasSuffix("/usd") {
-                  let currency = key.stringByReplacingOccurrencesOfString("/usd", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil).uppercaseString
-                  coinData.append(Coin(name: currency, price: (coinDict["price"] as NSString).doubleValue, price24h: (coinDict["price_before_24h"] as NSString).doubleValue, volume: (coinDict["volume_first"] as NSString).doubleValue))
-                }
-              }
+  private func decodeResponseData(data: NSData) -> [Coin] {
+    var coinData = [Coin]()
+
+    var JSONError: NSError?
+    let responseArray: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: &JSONError) as NSArray
+    if JSONError == nil {
+
+      for coinDict in responseArray {
+        if let coinDict = coinDict as? NSDictionary {
+          if let key = coinDict["id"] as? String {
+            if (key as NSString).hasSuffix("/usd") {
+              let currency = key.stringByReplacingOccurrencesOfString("/usd", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil).uppercaseString
+              coinData.append(Coin(name: currency, price: (coinDict["price"] as NSString).doubleValue, price24h: (coinDict["price_before_24h"] as NSString).doubleValue, volume: (coinDict["volume_first"] as NSString).doubleValue))
             }
           }
-
-          coinData.sort({ (a, b) -> Bool in
-            a.name < b.name
-          })
-          
-          dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(coinData), forKey: "coinData")
-            self.defaults.setObject(NSDate(), forKey: "date")
-            self.defaults.synchronize()
-
-            completion(coins: coinData, error: nil)
-          })
-        } else {
-          dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            completion(coins: nil, error: JSONError)
-          })
         }
+      }
+
+      coinData.sort({ (a, b) -> Bool in
+        a.name < b.name
+      })
+
+    }
+    return coinData
+  }
+
+  public func requestPrice(completion: PriceRequestCompletionBlock) {
+    let request = coinRequest()
+
+    let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        let coins = self.decodeResponseData(data)
+
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          self.cachePriceData(coins)
+
+          completion(coins: coins, error: nil)
+        })
       } else {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
           completion(coins: nil, error: error)
@@ -150,6 +157,25 @@ public class CoinHelper {
       }
     })
     task.resume()
+  }
+
+  public func requestPriceSynchronous() -> [Coin] {
+    let request = coinRequest()
+    var response: NSURLResponse?
+    var error: NSError?
+
+    if let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error) {
+      let coins = self.decodeResponseData(data)
+      return coins
+    }
+
+    return []
+  }
+
+  public func cachePriceData(coins: [Coin]) {
+    defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(coins), forKey: "coinData")
+    defaults.setObject(NSDate(), forKey: "date")
+    defaults.synchronize()
   }
 
   public func cachedDate() -> NSDate {
