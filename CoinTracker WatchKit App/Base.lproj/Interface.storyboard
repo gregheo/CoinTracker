@@ -22,8 +22,8 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="nameLabel" destination="vaW-vW-iaP" id="x7J-lI-4ad"/>
-                                        <outlet property="priceLabel" destination="eZG-GL-fmI" id="9EH-j1-XRv"/>
+                                        <outlet property="detailLabel" destination="eZG-GL-fmI" id="tUg-SU-SKs"/>
+                                        <outlet property="titleLabel" destination="vaW-vW-iaP" id="5cS-CJ-UXU"/>
                                         <segue destination="5Ou-Eb-VRs" kind="push" id="XHE-wk-3UQ"/>
                                     </connections>
                                 </tableRow>

@@ -25,7 +25,7 @@ import WatchKit
 
 class CoinRow: NSObject {
 
-  @IBOutlet weak var nameLabel: WKInterfaceLabel!
-  @IBOutlet weak var priceLabel: WKInterfaceLabel!
+  @IBOutlet weak var titleLabel: WKInterfaceLabel!
+  @IBOutlet weak var detailLabel: WKInterfaceLabel!
 
 }

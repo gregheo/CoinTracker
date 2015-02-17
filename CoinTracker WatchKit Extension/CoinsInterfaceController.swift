@@ -55,8 +55,8 @@ class CoinsInterfaceController: WKInterfaceController {
 
     for (index, coin) in enumerate(coins) {
       if let row = coinTable.rowControllerAtIndex(index) as? CoinRow {
-        row.nameLabel.setText(coin.name)
-        row.priceLabel.setText("\(coin.price)")
+        row.titleLabel.setText(coin.name)
+        row.detailLabel.setText("\(coin.price)")
       }
     }
   }
