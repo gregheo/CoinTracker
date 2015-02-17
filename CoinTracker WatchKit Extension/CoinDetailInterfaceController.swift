@@ -22,7 +22,17 @@
 
 import Foundation
 import WatchKit
+import CoinKit
 
 class CoinDetailInterfaceController: WKInterfaceController {
+  var coin: Coin!
 
+  override func awakeWithContext(context: AnyObject?) {
+    super.awakeWithContext(context)
+
+    if let coin = context as? Coin {
+      self.coin = coin
+      NSLog("\(self.coin)")
+    }
+  }
 }

@@ -61,6 +61,15 @@ class CoinsInterfaceController: WKInterfaceController {
     }
   }
 
+  override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+    if segueIdentifier == "CoinDetails" {
+      let coin = coins[rowIndex]
+      return coin
+    }
+
+    return nil
+  }
+  
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
