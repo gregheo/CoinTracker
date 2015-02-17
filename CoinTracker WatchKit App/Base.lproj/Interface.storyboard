@@ -24,6 +24,7 @@
                                     <connections>
                                         <outlet property="nameLabel" destination="vaW-vW-iaP" id="x7J-lI-4ad"/>
                                         <outlet property="priceLabel" destination="eZG-GL-fmI" id="9EH-j1-XRv"/>
+                                        <segue destination="5Ou-Eb-VRs" kind="push" id="XHE-wk-3UQ"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -34,6 +35,13 @@
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--CoinDetailInterfaceController-->
+        <scene sceneID="r99-Yy-m2Z">
+            <objects>
+                <controller identifier="CoinDetailInterfaceController" id="5Ou-Eb-VRs" customClass="CoinDetailInterfaceController" customModule="CoinTracker_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="479"/>
         </scene>
     </scenes>
 </document>
