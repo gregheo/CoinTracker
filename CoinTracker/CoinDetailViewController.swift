@@ -31,7 +31,6 @@ class CoinDetailViewController: UITableViewController {
 
     self.title = coin.name
   }
-
 }
 
 extension CoinDetailViewController: UITableViewDataSource {
@@ -50,9 +49,8 @@ extension CoinDetailViewController: UITableViewDataSource {
       cell.detailTextLabel?.text = "\(coin.price24h) USD"
     } else if indexPath.row == 2 {
       cell.textLabel?.text = "24hr Trading Volume"
-      cell.detailTextLabel?.text = "\(coin.volume)"
+      cell.detailTextLabel?.text = String(format: "%.4f", coin.volume)
     }
-
 
     return cell
   }
