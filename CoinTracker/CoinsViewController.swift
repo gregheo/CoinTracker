@@ -59,7 +59,8 @@ extension CoinsViewController: UITableViewDataSource {
 
     cell.textLabel?.text = coin.name
     cell.detailTextLabel?.text = "Last price: \(coin.price) USD"
-
+    cell.imageView?.image = UIImage(named: coin.name)
+    
     return cell
   }
 
