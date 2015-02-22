@@ -22,54 +22,12 @@
 
 import WatchKit
 import Foundation
-import CoinKit
 
 class CoinsInterfaceController: WKInterfaceController {
-  var coins = [Coin]()
-  let coinHelper = CoinHelper()
-
-  @IBOutlet weak var coinTable: WKInterfaceTable!
-  
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
-
-    coins = coinHelper.cachedPrices()
-    reloadTable()
-
-    WKInterfaceController.openParentApplication(["request": "refreshData"], reply: { (replyInfo, error) -> Void in
-      if let coinData = replyInfo["coinData"] as? NSData {
-        if let coins = NSKeyedUnarchiver.unarchiveObjectWithData(coinData) as? [Coin] {
-          self.coinHelper.cachePriceData(coins)
-
-          self.coins = coins
-          self.reloadTable()
-        }
-      }
-    })
   }
 
-  func reloadTable() {
-    if coinTable.numberOfRows != coins.count {
-      coinTable.setNumberOfRows(coins.count, withRowType: "CoinRow")
-    }
-
-    for (index, coin) in enumerate(coins) {
-      if let row = coinTable.rowControllerAtIndex(index) as? CoinRow {
-        row.titleLabel.setText(coin.name)
-        row.detailLabel.setText("\(coin.price)")
-      }
-    }
-  }
-
-  override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-    if segueIdentifier == "CoinDetails" {
-      let coin = coins[rowIndex]
-      return coin
-    }
-
-    return nil
-  }
-  
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
