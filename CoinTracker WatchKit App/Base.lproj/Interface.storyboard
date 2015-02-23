@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Coins Interface Controller-->
+        <!--Coins-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="CoinsInterfaceController" customModule="CoinTracker_WatchKit_Extension"/>
+                <controller title="Coins" id="AgC-eL-Hgc" customClass="CoinsInterfaceController" customModule="CoinTracker_WatchKit_Extension"/>
             </objects>
         </scene>
     </scenes>
